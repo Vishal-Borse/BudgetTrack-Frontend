@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+.background_container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  overflow-x: hidden;
+}
+.card {
+  background-color: white;
+  padding: 40px 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 20px 100px 10px 30px;
+  font-family: "Poppins", sans-serif;
+}
+.heading h1 {
+  margin: 0;
+}
+.cancel_btn_div {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.cancel_btn {
+  color: #674188;
+  font-size: 25px;
+}
+.cancel_btn:hover {
+  color: #c3acd0;
+}
+
+.inputField{
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    
+}
+.upper_input input{
+    width: 500px;
+    height: 20px;
+    border: 1px solid #674188;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-family: "Poppins", sans-serif;
+    margin: 5px auto;
+}
+.lower_inputs input{
+    width: 200px;
+    height: 20px;
+    border: 1px solid #674188;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-family: "Poppins", sans-serif;
+    margin: 5px auto;
+}
+.lower_inputs .inputField {
+    margin-top: 10px;
+}
+.inputField {
+    margin-right: 30px;
+}
+.select_categories{
+    width: 200px;
+    height: 38px;
+    border: 1px solid #674188;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-family: "Poppins", sans-serif;
+    margin: 5px auto;
+    color: black;
+    font-weight: 400;
+}
+.categories_optn{
+    width: 200px;
+    height: 20px;
+    border: 1px solid #674188;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-family: "Poppins", sans-serif;
+    margin: 5px auto;
+}
+.data_fields label{
+    font-weight: 600;
+}
+.data_fields{
+    margin: 30px 100px 30px 30px;
+}
+.lower_inputs{
+    display: flex;
+    flex-direction: row;
+}
+.inputs_btn{
+    margin: 5px 100px 10px 25px;
+}
+.inputs_btn button {
+    margin: 5px;
+    padding: 8px 20px;
+    width: 100px;
+    background-color: #674188;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: #fff;
+  }
+  .inputs_btn button:hover {
+    background-color: #c3acd0;
+  }
+  
