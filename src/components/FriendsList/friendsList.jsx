@@ -49,7 +49,7 @@ const FriendsList = ({ closeCallback }) => {
     const getFriends = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8081/dashboard/getfriends",
+          "https://budget-track-backend.onrender.com/dashboard/getfriends",
           {
             withCredentials: true,
           }
