@@ -74,7 +74,7 @@ const Dashboard = () => {
     };
     console.log(formData);
     try {
-      const url = "http://localhost:8081/dashboard/deletetransaction";
+      const url = "https://budget-track-backend.onrender.com/dashboard/deletetransaction";
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
@@ -91,7 +91,7 @@ const Dashboard = () => {
     };
     console.log(formData);
     try {
-      const url = "http://localhost:8081/dashboard/clearpayrequest";
+      const url = "https://budget-track-backend.onrender.com/dashboard/clearpayrequest";
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
@@ -106,17 +106,17 @@ const Dashboard = () => {
   useEffect(() => {
     const getDashboard = async () => {
       try {
-        const url1 = "http://localhost:8081/dashboard";
+        const url1 = "https://budget-track-backend.onrender.com/dashboard";
         const response1 = await axios.get(url1, { withCredentials: true });
         const userDetails = response1.data;
         console.log(userDetails);
 
-        const url2 = "http://localhost:8081/dashboard/gettransactions";
+        const url2 = "https://budget-track-backend.onrender.com/dashboard/gettransactions";
         const response2 = await axios.get(url2, { withCredentials: true });
         const transactions = response2.data;
         console.log(transactions);
 
-        const url3 = "http://localhost:8081/dashboard/getpayrequests";
+        const url3 = "https://budget-track-backend.onrender.com/dashboard/getpayrequests";
         const response3 = await axios.get(url3, { withCredentials: true });
         const payRequests = response3.data;
         console.log(payRequests);

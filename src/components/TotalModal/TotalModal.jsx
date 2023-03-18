@@ -22,7 +22,7 @@ const TotalModal = ({ closeCallback }) => {
     };
     console.log(data);
     try {
-      const url = "http://localhost:8081/dashboard/addamount";
+      const url = "https://budget-track-backend.onrender.com/dashboard/addamount";
       const response = await axios.post(url, data, { withCredentials: true });
       console.log(response);
       navigate(0);

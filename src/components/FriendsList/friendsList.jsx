@@ -30,7 +30,7 @@ const FriendsList = ({ closeCallback }) => {
       friendEmail: friend,
     };
     try {
-      const url = "http://localhost:8081/dashboard/addfriend";
+      const url = "https://budget-track-backend.onrender.com/dashboard/addfriend";
 
       console.log("success");
       const response = await axios.post(url, formData, {

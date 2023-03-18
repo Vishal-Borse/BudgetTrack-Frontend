@@ -41,7 +41,7 @@ const GroupTransaction = ({ closeCallback }) => {
     console.log(formData);
 
     try {
-      const url = "http://localhost:8081/dashboard/grouptransaction";
+      const url = "https://budget-track-backend.onrender.com/dashboard/grouptransaction";
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
@@ -80,7 +80,7 @@ const GroupTransaction = ({ closeCallback }) => {
     const getFriends = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8081/dashboard/getfriends",
+          "https://budget-track-backend.onrender.com/dashboard/getfriends",
           {
             withCredentials: true,
           }

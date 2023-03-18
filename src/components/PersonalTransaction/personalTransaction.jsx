@@ -37,7 +37,7 @@ const PersonalTransaction = ({ closeCallback }) => {
     console.log(formData);
 
     try {
-      const url = "http://localhost:8081/dashboard/personaltransaction";
+      const url = "https://budget-track-backend.onrender.com/dashboard/personaltransaction";
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });

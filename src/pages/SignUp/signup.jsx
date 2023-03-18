@@ -42,7 +42,7 @@ const SignUp = () => {
     };
 
     try {
-      const url = "http://localhost:8081/signup";
+      const url = "https://budget-track-backend.onrender.com/signup";
       const response = await axios.post(url, formData);
       console.log(response);
       if(response.status === 201){

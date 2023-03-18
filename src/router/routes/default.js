@@ -4,7 +4,7 @@ import Home from "../../pages/Home/home";
 import Dashboard from "../../pages/Dashboard/dashboard";
 import Signup from "../../pages/SignUp/signup";
 import Signin from "../../pages/SignIn/signin";
-import FriendsList from "../../components/FriendsList/friendsList";
+// import FriendsList from "../../components/FriendsList/friendsList";
 import Logout from "../../pages/Logout/logout";
 // import Loading from "../../components/Loading/loading";
 
