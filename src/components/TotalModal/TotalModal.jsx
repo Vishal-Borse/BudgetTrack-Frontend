@@ -4,6 +4,7 @@ import { ImCancelCircle } from "react-icons/im";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../pages/Utilis/helper";
 
 const TotalModal = ({ closeCallback }) => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const TotalModal = ({ closeCallback }) => {
       amount: amount,
     };
     try {
-      const url = `${process.env.BASE_URL}/dashboard/addamount`;
+      const url = `${BASE_URL}/dashboard/addamount`;
       const response = await axios.post(url, data, { withCredentials: true });
       navigate(0);
       

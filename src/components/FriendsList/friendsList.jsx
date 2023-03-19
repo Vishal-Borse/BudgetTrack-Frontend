@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import BASE_URL from "../../pages/Utilis/helper";
 
 const FriendsList = ({ closeCallback }) => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const FriendsList = ({ closeCallback }) => {
       friendEmail: friend,
     };
     try {
-      const url = `${process.env.BASE_URL}/dashboard/addfriend`;
+      const url = `${BASE_URL}/dashboard/addfriend`;
 
       const response = await axios.post(url, formData, {
         withCredentials: true,
@@ -47,7 +48,7 @@ const FriendsList = ({ closeCallback }) => {
     const getFriends = async () => {
       try {
         const response = await axios.get(
-          "https://budget-track-backend.onrender.com/dashboard/getfriends",
+          `${BASE_URL}/dashboard/getfriends`,
           {
             withCredentials: true,
           }

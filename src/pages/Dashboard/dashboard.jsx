@@ -28,6 +28,7 @@ import GroupTransaction from "../../components/GroupTransaction/groupTransaction
 import UpdateTransaction from "../../components/UpdateTransaction/updateTransaction";
 import { formatDate } from "../Utilis/formatDate";
 import Loading from "../../components/Loading/loading";
+import BASE_URL from "../.././pages/Utilis/helper";
 
 const Dashboard = () => {
   // const transactionLogoArray = [FaShoppingCart,IoFastFoodSharp,MdHealthAndSafety,BsFillBasketFill,BsFillFilterSquareFill];
@@ -73,7 +74,7 @@ const Dashboard = () => {
       transactionAmount: amount,
     };
     try {
-      const url = `${process.env.BASE_URL}/dashboard/deletetransaction`;
+      const url = `${BASE_URL}/dashboard/deletetransaction`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
@@ -89,7 +90,7 @@ const Dashboard = () => {
     };
 
     try {
-      const url = `${process.env.BASE_URL}/dashboard/clearpayrequest`;
+      const url = `${BASE_URL}/dashboard/clearpayrequest`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
@@ -103,15 +104,15 @@ const Dashboard = () => {
   useEffect(() => {
     const getDashboard = async () => {
       try {
-        const url1 = `${process.env.BASE_URL}/dashboard`;
+        const url1 = `${BASE_URL}/dashboard`;
         const response1 = await axios.get(url1, { withCredentials: true });
         const userDetails = response1.data;
 
-        const url2 = `${process.env.BASE_URL}/dashboard/gettransactions`;
+        const url2 = `${BASE_URL}/dashboard/gettransactions`;
         const response2 = await axios.get(url2, { withCredentials: true });
         const transactions = response2.data;
 
-        const url3 = `${process.env.BASE_URL}/dashboard/getpayrequests`;
+        const url3 = `${BASE_URL}/dashboard/getpayrequests`;
         const response3 = await axios.get(url3, { withCredentials: true });
         const payRequests = response3.data;
 

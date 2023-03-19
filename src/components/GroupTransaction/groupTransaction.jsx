@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import BASE_URL from "../../pages/Utilis/helper";
 
 const GroupTransaction = ({ closeCallback }) => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const GroupTransaction = ({ closeCallback }) => {
     };
 
     try {
-      const url = `${process.env.BASE_URL}/dashboard/grouptransaction`;
+      const url = `${BASE_URL}/dashboard/grouptransaction`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
@@ -77,7 +78,7 @@ const GroupTransaction = ({ closeCallback }) => {
     const getFriends = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BASE_URL}/dashboard/getfriends`,
+          `${BASE_URL}/dashboard/getfriends`,
           {
             withCredentials: true,
           }

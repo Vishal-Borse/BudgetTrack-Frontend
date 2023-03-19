@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../pages/Utilis/helper";
 
 const PersonalTransaction = ({ closeCallback }) => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const PersonalTransaction = ({ closeCallback }) => {
     };
 
     try {
-      const url = `${process.env.BASE_URL}/dashboard/personaltransaction`;
+      const url = `${BASE_URL}/dashboard/personaltransaction`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
