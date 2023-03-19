@@ -30,6 +30,7 @@ const Signin = () => {
     try {
       const url = `${process.env.BASE_URL}/signin`;
       const response = await axios.post(url, formData, {withCredentials: true});
+      console.log(response);
       navigate('/dashboard');
     } catch (error) {
       console.log(error);
