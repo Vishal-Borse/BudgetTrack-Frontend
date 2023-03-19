@@ -30,13 +30,11 @@ const FriendsList = ({ closeCallback }) => {
       friendEmail: friend,
     };
     try {
-      const url = "https://budget-track-backend.onrender.com/dashboard/addfriend";
+      const url = `${process.env.BASE_URL}/dashboard/addfriend`;
 
-      console.log("success");
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
-      console.log(response.data);
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
@@ -54,7 +52,6 @@ const FriendsList = ({ closeCallback }) => {
             withCredentials: true,
           }
         );
-        console.log("request response :" + response.data);
         setFriends(response.data);
       } catch (error) {
         console.log(error);

@@ -8,9 +8,8 @@ const Logout = () => {
 
   useEffect(() => {
     try{
-        const url = "https://budget-track-backend.onrender.com/dashboard/logout";
+        const url = `${process.env.BASE_URL}/dashboard/logout`;
         const response = axios.get(url, { withCredentials: true });
-        console.log(response);
         navigate("/");
       } catch (error) {
         toast.error(error.response.data.message);

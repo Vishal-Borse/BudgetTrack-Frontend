@@ -42,19 +42,20 @@ const SignUp = () => {
     };
 
     try {
-      const url = "https://budget-track-backend.onrender.com/signup";
+      const url = `${process.env.BASE_URL}/signup`;
       const response = await axios.post(url, formData);
-      console.log(response);
-      if(response.status === 201){
-        navigate('/signin');
+
+      if (response.status === 201) {
+        navigate("/signin");
         return;
       }
     } catch (error) {
-      if(error.response.status === 400){
+      console.log(error);
+      if (error.response.status === 400) {
         toast.success("user already registered");
-        navigate('/signin');
+        navigate("/signin");
       }
-      if(error.response?.data?.message){
+      if (error.response?.data?.message) {
         toast.error(error.response.data.message);
       }
     }

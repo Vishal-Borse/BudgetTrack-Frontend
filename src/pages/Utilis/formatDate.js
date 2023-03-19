@@ -13,7 +13,6 @@ const formatDate = (date) => {
     "November",
     "December",
   ];
-  console.log(date);
   var formatedDate =
     date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
   console.log(formatedDate);

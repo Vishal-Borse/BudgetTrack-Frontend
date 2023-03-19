@@ -27,14 +27,12 @@ const Signin = () => {
       userEmail: email,
       userPassword: password,
     };
-
-    console.log(formData);
     try {
-      const url = "https://budget-track-backend.onrender.com/signin";
+      const url = `${process.env.BASE_URL}/signin`;
       const response = await axios.post(url, formData, {withCredentials: true});
-      console.log(response);
       navigate('/dashboard');
     } catch (error) {
+      console.log(error);
       toast.error(error.response.data.message);
       navigate("/signup")
     }

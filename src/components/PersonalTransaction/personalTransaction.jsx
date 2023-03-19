@@ -34,14 +34,11 @@ const PersonalTransaction = ({ closeCallback }) => {
       transactionCategory: category,
     };
 
-    console.log(formData);
-
     try {
-      const url = "https://budget-track-backend.onrender.com/dashboard/personaltransaction";
+      const url = `${process.env.BASE_URL}/dashboard/personaltransaction`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
-      console.log(response);
       navigate(0);
     } catch (error) {
       toast.error(error.response.data.message);

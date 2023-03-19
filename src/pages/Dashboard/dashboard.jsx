@@ -72,14 +72,12 @@ const Dashboard = () => {
       transactionId: ID,
       transactionAmount: amount,
     };
-    console.log(formData);
     try {
-      const url = "https://budget-track-backend.onrender.com/dashboard/deletetransaction";
+      const url = `${process.env.BASE_URL}/dashboard/deletetransaction`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
       window.location.reload();
-      console.log(response);
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
@@ -89,14 +87,13 @@ const Dashboard = () => {
     const formData = {
       payrequestId: ID,
     };
-    console.log(formData);
+
     try {
-      const url = "https://budget-track-backend.onrender.com/dashboard/clearpayrequest";
+      const url = `${process.env.BASE_URL}/dashboard/clearpayrequest`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
       window.location.reload();
-      console.log(response);
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
@@ -106,20 +103,17 @@ const Dashboard = () => {
   useEffect(() => {
     const getDashboard = async () => {
       try {
-        const url1 = "https://budget-track-backend.onrender.com/dashboard";
+        const url1 = `${process.env.BASE_URL}/dashboard`;
         const response1 = await axios.get(url1, { withCredentials: true });
         const userDetails = response1.data;
-        console.log(userDetails);
 
-        const url2 = "https://budget-track-backend.onrender.com/dashboard/gettransactions";
+        const url2 = `${process.env.BASE_URL}/dashboard/gettransactions`;
         const response2 = await axios.get(url2, { withCredentials: true });
         const transactions = response2.data;
-        console.log(transactions);
 
-        const url3 = "https://budget-track-backend.onrender.com/dashboard/getpayrequests";
+        const url3 = `${process.env.BASE_URL}/dashboard/getpayrequests`;
         const response3 = await axios.get(url3, { withCredentials: true });
         const payRequests = response3.data;
-        console.log(payRequests);
 
         setUserData(userDetails);
         setUserTransactions(transactions);
@@ -132,10 +126,6 @@ const Dashboard = () => {
     };
     getDashboard();
   }, [navigate]);
-
-  console.log(user);
-  console.log(userTransactions);
-  console.log(userPayRequests);
 
   if (!user) {
     return <Loading />;
@@ -239,7 +229,6 @@ const Dashboard = () => {
                 <IoMdArrowDropdown /> */}
                 <select
                   className={styles.select_categories}
-                  
                   value={filter}
                   onChange={(e) => {
                     filterClicked({ ...filters, category: e.target.value });

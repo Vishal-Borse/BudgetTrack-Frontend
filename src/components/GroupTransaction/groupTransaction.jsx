@@ -35,17 +35,14 @@ const GroupTransaction = ({ closeCallback }) => {
       transactionPurpose: purpose,
       transactionAmount: amount,
       transactionCategory: category,
-      allMembers : members,
+      allMembers: members,
     };
 
-    console.log(formData);
-
     try {
-      const url = "https://budget-track-backend.onrender.com/dashboard/grouptransaction";
+      const url = `${process.env.BASE_URL}/dashboard/grouptransaction`;
       const response = await axios.post(url, formData, {
         withCredentials: true,
       });
-      console.log(response);
       navigate(0);
     } catch (error) {
       toast.error(error.response.data.message);
@@ -80,12 +77,11 @@ const GroupTransaction = ({ closeCallback }) => {
     const getFriends = async () => {
       try {
         const response = await axios.get(
-          "https://budget-track-backend.onrender.com/dashboard/getfriends",
+          `${process.env.BASE_URL}/dashboard/getfriends`,
           {
             withCredentials: true,
           }
         );
-        console.log("request response :" + response.data);
         setFriends(response.data);
       } catch (error) {
         console.log(error);
@@ -93,8 +89,6 @@ const GroupTransaction = ({ closeCallback }) => {
     };
     getFriends();
   }, [navigate]);
-
-  console.log(friends);
 
   return (
     <div className={styles.background_container}>
